@@ -1,0 +1,33 @@
+class ClassA:
+    def __init__(self):
+        self.attribute_a = "father1"
+    def method_a(self):
+        return "Метод з father1"
+
+class ClassB:
+    def __init__(self):
+        self.attribute_b = "father2"
+    def method_b(self):
+        return "Метод з father2"
+
+class ClassC:
+    def __init__(self):
+        self.attribute_c = "father3"
+    def method_c(self):
+        return "Метод з father3"
+
+class ChildClass(father1, father2, father3):
+    def __init__(self):
+        ClassA.__init__(self)
+        ClassB.__init__(self)
+        ClassC.__init__(self)
+        self.child_attribute = "Атрибут дочірнього класу"
+    
+    def child_method(self):
+        return "Метод з дочірнього класу"
+
+child = ChildClass()
+print(child.attribute_a, child.method_a())  
+print(child.attribute_b, child.method_b())  
+print(child.attribute_c, child.method_c())  
+print(child.child_attribute, child.child_method())
